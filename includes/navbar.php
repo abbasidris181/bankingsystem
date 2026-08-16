@@ -1,24 +1,37 @@
-<nav class="bg-blue-700 text-white shadow-lg">
+<nav class="bg-white shadow-sm border-b h-16">
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="h-full px-6 flex items-center justify-between">
 
-        <div class="flex justify-between items-center h-16">
+        <div class="flex items-center gap-3">
 
-            <h1 class="text-2xl font-bold">
-                🏦 GPT Bank PLC
+            <i class="fa-solid fa-building-columns text-blue-700 text-2xl"></i>
+
+            <h1 class="text-xl font-bold text-slate-800">
+                GPT Bank PLC
             </h1>
 
-            <ul class="flex space-x-8">
+        </div>
 
-                <li><a href="index.php" class="hover:text-yellow-300">Dashboard</a></li>
+        <div class="flex items-center gap-4">
 
-                <li><a href="#">Customers</a></li>
+            <button class="text-slate-600">
+                <i class="fa-solid fa-bell"></i>
+            </button>
 
-                <li><a href="#">Accounts</a></li>
+            <div class="flex items-center gap-2">
 
-                <li><a href="#">Transactions</a></li>
+                <div
+                    class="w-9 h-9 rounded-full bg-blue-700 text-white
+                           flex items-center justify-center font-bold"
+                >
+                    A
+                </div>
 
-            </ul>
+                <span class="font-medium text-slate-700">
+                    Admin
+                </span>
+
+            </div>
 
         </div>
 
