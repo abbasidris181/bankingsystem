@@ -22,7 +22,29 @@ require_once "includes/navbar.php";
 
         require_once "pages/create-customer.php";
 
-    } else {
+    }
+    
+    elseif ($page === "customer-details") {
+
+    require_once "pages/customer-details.php";
+
+    }
+
+    elseif ($page === "edit-customer") {
+
+    require_once "pages/edit-customer.php";
+
+    }
+
+
+    
+    elseif ($page === "delete-customer") {
+
+    require_once "pages/delete-customer.php";
+
+    }
+
+    else {
 
         require_once "pages/dashboard.php";
 

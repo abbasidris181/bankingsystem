@@ -114,23 +114,57 @@ $customers = $repository->all();
 
                             <td class="p-4">
 
-                                <button
+                                <a
+                                    href="index.php?page=customer-details&id=<?= $customer['id'] ?>"
                                     class="text-blue-600 hover:text-blue-800 mr-3"
                                 >
                                     <i class="fa-solid fa-eye"></i>
-                                </button>
+                                </a>
 
-                                <button
+                                <a
+                                    href="index.php?page=edit-customer&id=<?= $customer['id'] ?>"
                                     class="text-amber-500 hover:text-amber-700 mr-3"
                                 >
                                     <i class="fa-solid fa-pen"></i>
-                                </button>
+                                </a>
 
-                                <button
+                                <!-- <button
                                     class="text-red-600 hover:text-red-800"
                                 >
                                     <i class="fa-solid fa-trash"></i>
+                                </button> -->
+
+
+                                <!-- <button
+                                    type="button"
+                                    class="text-red-600 hover:text-red-800 delete-customer"
+                                    data-id="<?= $customer['id'] ?>"
+                                    data-name="<?= htmlspecialchars($customer['full_name']) ?>"
+                                >
+                                    <i class="fa-solid fa-trash"></i>
+                                </button> -->
+                                
+                            <form
+                                method="POST"
+                                action="index.php?page=delete-customer"
+                                class="inline delete-form"
+                            >
+
+                                <input
+                                    type="hidden"
+                                    name="id"
+                                    value="<?= $customer['id'] ?>"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="text-red-600 hover:text-red-800 delete-customer"
+                                    data-name="<?= htmlspecialchars($customer['full_name']) ?>"
+                                >
+                                    <i class="fa-solid fa-trash"></i>
                                 </button>
+
+                                </form>
 
                             </td>
 

@@ -33,6 +33,41 @@
         endif;
 
         ?>
+
+
+        <?php if (isset($_SESSION["error"])): ?>
+
+        <script>
+
+            iziToast.error({
+
+                title: "Error",
+
+                message:
+                    <?= json_encode($_SESSION["error"]) ?>,
+
+                position: "topRight"
+
+            });
+
+        </script>
+
+        <?php
+
+        unset($_SESSION["error"]);
+
+        endif;
+
+        ?>
+       
+                <!-- SweetAlert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <!-- Our JavaScript -->
+       <script src="/BankingSystem/public/js/app.js"></script>
+
+
+
 </body>
 
 </html>
