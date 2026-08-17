@@ -1,3 +1,19 @@
+<?php
+
+require_once __DIR__ . "/../config/database.php";
+require_once __DIR__ . "/../app/Models/Customer.php";
+require_once __DIR__ . "/../app/Repositories/CustomerRepository.php";
+
+$repository = new CustomerRepository($pdo);
+
+$customers = $repository->all();
+
+?>
+
+
+
+
+
 <main class="flex-1 p-8">
 
     <div class="flex items-center justify-between mb-8">
@@ -47,21 +63,85 @@
 
             </thead>
 
-
             <tbody>
 
-                <tr>
+                <?php if (empty($customers)): ?>
 
-                    <td
-                        colspan="4"
-                        class="text-center p-10 text-slate-500"
-                    >
-                        No customers registered yet.
-                    </td>
+                    <tr>
 
-                </tr>
+                        <td
+                            colspan="4"
+                            class="text-center p-10 text-slate-500"
+                        >
+                            No customers registered yet.
+                        </td>
 
-            </tbody>
+                    </tr>
+
+                <?php else: ?>
+
+
+                    <?php foreach ($customers as $customer): ?>
+
+                        <tr class="border-b hover:bg-slate-50">
+
+                            <td class="p-4 font-medium text-slate-800">
+
+                                <?= htmlspecialchars(
+                                    $customer["full_name"]
+                                ) ?>
+
+                            </td>
+
+
+                            <td class="p-4 text-slate-600">
+
+                                <?= htmlspecialchars(
+                                    $customer["phone"]
+                                ) ?>
+
+                            </td>
+
+
+                            <td class="p-4 text-slate-600">
+
+                                <?= htmlspecialchars(
+                                    $customer["email"]
+                                ) ?>
+
+                            </td>
+
+
+                            <td class="p-4">
+
+                                <button
+                                    class="text-blue-600 hover:text-blue-800 mr-3"
+                                >
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+
+                                <button
+                                    class="text-amber-500 hover:text-amber-700 mr-3"
+                                >
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+
+                                <button
+                                    class="text-red-600 hover:text-red-800"
+                                >
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    <?php endforeach; ?>
+
+
+                <?php endif; ?>
+
+                </tbody>
 
         </table>
 

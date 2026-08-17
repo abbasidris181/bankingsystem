@@ -4,7 +4,7 @@
 
         <a
             href="index.php?page=dashboard"
-            class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-600"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 hover:text-white "
         >
             <i class="fa-solid fa-house w-5"></i>
 

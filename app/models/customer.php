@@ -2,16 +2,16 @@
 
 class Customer
 {
-    private $id;
-    private $fullName;
-    private $phone;
-    private $email;
+    private ?int $id;
+    private string $fullName;
+    private string $phone;
+    private string $email;
 
     public function __construct(
-        $fullName,
-        $phone,
-        $email,
-        $id = null
+        string $fullName,
+        string $phone,
+        string $email,
+        ?int $id = null
     ) {
         $this->fullName = $fullName;
         $this->phone = $phone;
@@ -19,24 +19,23 @@ class Customer
         $this->id = $id;
     }
 
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFullName()
+    public function getFullName(): string
     {
         return $this->fullName;
     }
 
-    public function getPhone()
+    public function getPhone(): string
     {
         return $this->phone;
     }
 
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
 }
-?>
