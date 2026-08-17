@@ -3,7 +3,7 @@
     <nav class="p-4 space-y-2">
 
         <a
-            href="index.php"
+            href="index.php?page=dashboard"
             class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-600"
         >
             <i class="fa-solid fa-house w-5"></i>
@@ -13,7 +13,7 @@
 
 
         <a
-            href="#"
+            href="index.php?page=customers"
             class="flex items-center gap-3 px-4 py-3 rounded-lg
                    text-slate-300 hover:bg-slate-800 hover:text-white"
         >
