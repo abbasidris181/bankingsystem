@@ -87,7 +87,7 @@
         </h2>
 
         <p class="text-slate-500 mt-2">
-            Edit customer details
+            Edit customer
         </p>
 
     </div>
@@ -128,7 +128,10 @@
 <?php endif; ?>
     <div class="max-w-2xl bg-white rounded-xl shadow-sm border p-8">
 
-        <form method="POST" action="index.php?page=edit-customer&id=<?= $id ?>"
+        <form method="POST" <form
+            method="POST"
+            action="index.php?page=edit-customer&id=<?= $id ?>"
+            >
 
             <div class="mb-5">
 
@@ -142,7 +145,7 @@
                     type="text"
                     name="full_name"
                     id="full_name"
-                    value="<?= htmlspecialchars($fullName) ?>"
+                    value="<?= htmlspecialchars($fullName ?? '') ?>"
                     required
                     class="w-full border border-slate-300 rounded-lg
                         px-4 py-3 outline-none
@@ -163,7 +166,7 @@
 
                 <input
                     type="text"
-                    value="<?= htmlspecialchars($phone) ?>"
+                    value="<?= htmlspecialchars($phone ?? '') ?>"
                     name="phone"
                     id="phone"
                     required
@@ -186,7 +189,7 @@
 
                 <input
                     type="email"
-                    value="<?= htmlspecialchars($email) ?>"
+                    value="<?= htmlspecialchars($email ?? '') ?>"
                     name="email"
                     id="email"
                     required
@@ -199,12 +202,12 @@
 
 
            <button
-                type="submit"
-                class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg"
-            >
-                <i class="fa-solid fa-floppy-disk mr-2"></i>
-                Save Changes
-            </button>
+            type="submit"
+            class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg"
+        >
+            <i class="fa-solid fa-floppy-disk mr-2"></i>
+            Save Changes
+        </button>
 
         </form>
 
