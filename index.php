@@ -44,11 +44,26 @@ require_once "includes/navbar.php";
 
     }
 
+
+    
+    elseif ($page === "accounts") {
+
+    require_once "pages/accounts.php";
+
+    } elseif ($page === "create-account") {
+
+        require_once "pages/create-account.php";
+
+    }
+    
+
     else {
 
         require_once "pages/dashboard.php";
 
     }
+
+
 
     ?>
 

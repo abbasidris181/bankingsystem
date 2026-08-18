@@ -49,3 +49,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+const accountType =
+    document.getElementById("account_type");
+
+const interestSection =
+    document.getElementById("interest-section");
+
+const overdraftSection =
+    document.getElementById("overdraft-section");
+
+
+if (accountType) {
+
+    accountType.addEventListener(
+        "change",
+        function () {
+
+            interestSection.classList.add("hidden");
+            overdraftSection.classList.add("hidden");
+
+
+            if (accountType.value === "savings") {
+
+                interestSection.classList.remove("hidden");
+
+            }
+
+
+            if (accountType.value === "current") {
+
+                overdraftSection.classList.remove("hidden");
+
+            }
+
+        }
+    );
+
+}
