@@ -31,6 +31,9 @@
         src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js">
     </script>
 
+    <!-- chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- sweetalert2 -->
 

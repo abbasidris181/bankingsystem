@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 require_once "includes/header.php";
 require_once "includes/navbar.php";
 
@@ -14,7 +15,11 @@ require_once "includes/navbar.php";
 
     $page = $_GET["page"] ?? "dashboard";
 
-    if ($page === "customers") {
+    if ($page === "dashboard") {
+
+        require_once "pages/dashboard.php";
+
+    } elseif ($page === "customers") {
 
         require_once "pages/customers.php";
 
@@ -22,43 +27,29 @@ require_once "includes/navbar.php";
 
         require_once "pages/create-customer.php";
 
-    }
-    
-    elseif ($page === "customer-details") {
+    } elseif ($page === "customer-details") {
 
-    require_once "pages/customer-details.php";
+        require_once "pages/customer-details.php";
 
-    }
+    } elseif ($page === "edit-customer") {
 
-    elseif ($page === "edit-customer") {
+        require_once "pages/edit-customer.php";
 
-    require_once "pages/edit-customer.php";
+    } elseif ($page === "delete-customer") {
 
-    }
+        require_once "pages/delete-customer.php";
 
+    } elseif ($page === "accounts") {
 
-    
-    elseif ($page === "delete-customer") {
-
-    require_once "pages/delete-customer.php";
-
-    }
-
-
-    
-    elseif ($page === "accounts") {
-
-    require_once "pages/accounts.php";
+        require_once "pages/accounts.php";
 
     } elseif ($page === "create-account") {
 
         require_once "pages/create-account.php";
 
-    }
+    } elseif ($page === "deposit") {
 
-    elseif ($page === "deposit") {
-
-    require_once "pages/deposit.php";
+        require_once "pages/deposit.php";
 
     } elseif ($page === "withdraw") {
 
@@ -68,23 +59,14 @@ require_once "includes/navbar.php";
 
         require_once "pages/transactions.php";
 
-    }
-    
-
-    else {
+    } else {
 
         require_once "pages/dashboard.php";
 
     }
 
-
-
     ?>
 
 </div>
 
-<?php
-
-require_once "includes/footer.php";
-
-?>
+<?php require_once "includes/footer.php"; ?>
