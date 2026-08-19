@@ -55,6 +55,20 @@ require_once "includes/navbar.php";
         require_once "pages/create-account.php";
 
     }
+
+    elseif ($page === "deposit") {
+
+    require_once "pages/deposit.php";
+
+    } elseif ($page === "withdraw") {
+
+        require_once "pages/withdraw.php";
+
+    } elseif ($page === "transactions") {
+
+        require_once "pages/transactions.php";
+
+    }
     
 
     else {

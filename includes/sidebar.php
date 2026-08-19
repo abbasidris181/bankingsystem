@@ -35,7 +35,7 @@
 
 
         <a
-            href="#"
+            href="index.php?page=deposit"
             class="flex items-center gap-3 px-4 py-3 rounded-lg
                    text-slate-300 hover:bg-slate-800 hover:text-white"
         >
@@ -46,7 +46,7 @@
 
 
         <a
-            href="#"
+            href="index.php?page=withdraw"
             class="flex items-center gap-3 px-4 py-3 rounded-lg
                    text-slate-300 hover:bg-slate-800 hover:text-white"
         >
@@ -57,7 +57,7 @@
 
 
         <a
-            href="#"
+            href="index.php?page=transactions"
             class="flex items-center gap-3 px-4 py-3 rounded-lg
                    text-slate-300 hover:bg-slate-800 hover:text-white"
         >
