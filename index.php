@@ -1,5 +1,6 @@
 <?php
 
+        ob_start();
         session_start();
 
         $page =
@@ -80,11 +81,26 @@
 
                 require_once "pages/transactions.php";
 
-            } else {
+
+            }elseif ($page === "account-details") {
+
+                require_once "pages/account-details.php";
+
+            } elseif ($page === "transfer") {
+
+                require_once "pages/transfer.php";
+
+            }
+            
+            
+            else {
 
                 require_once "pages/dashboard.php";
 
             }
+
+
+            ob_end_flush();
 
             ?>
 

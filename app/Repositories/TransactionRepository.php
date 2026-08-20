@@ -78,4 +78,33 @@ class TransactionRepository
             ->query($sql)
             ->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function findByAccount(
+            int $accountId
+        ): array {
+
+            $sql = "
+                SELECT
+                    id,
+                    transaction_type,
+                    amount,
+                    balance_before,
+                    balance_after,
+                    created_at
+                FROM transactions
+                WHERE account_id = :account_id
+                ORDER BY id DESC
+            ";
+
+            $statement =
+                $this->pdo->prepare($sql);
+
+            $statement->execute([
+                "account_id" => $accountId
+            ]);
+
+            return $statement->fetchAll(
+                PDO::FETCH_ASSOC
+            );
+        }
 }

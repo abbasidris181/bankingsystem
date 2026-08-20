@@ -88,6 +88,10 @@ $accounts =
                         Balance
                     </th>
 
+                    <th class="text-left p-4">
+                        Action
+                    </th>
+
                 </tr>
 
             </thead>
@@ -150,6 +154,19 @@ $accounts =
                                 $account["balance"],
                                 2
                             ) ?>
+
+                        </td>
+
+
+                        <td class="p-4">
+
+                            <a
+                                href="index.php?page=account-details&id=<?= $account['id'] ?>"
+                                class="text-blue-600 hover:text-blue-800"
+                                title="View Account"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
 
                         </td>
 

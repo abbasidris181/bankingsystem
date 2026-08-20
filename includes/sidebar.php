@@ -56,6 +56,21 @@
         </a>
 
 
+         <a
+            href="index.php?page=transfer"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg
+                text-slate-300 hover:bg-slate-800 hover:text-white"
+        >
+
+            <i class="fa-solid fa-arrow-right-arrow-left w-5"></i>
+
+            <span>
+                Transfer
+            </span>
+
+        </a>
+
+
         <a
             href="index.php?page=transactions"
             class="flex items-center gap-3 px-4 py-3 rounded-lg
