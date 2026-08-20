@@ -23,6 +23,9 @@
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+
+        verifyCsrf();
+
         $fullName = trim($_POST["full_name"] ?? "");
         $phone = trim($_POST["phone"] ?? "");
         $email = trim($_POST["email"] ?? "");
@@ -132,6 +135,8 @@
             method="POST"
             action="index.php?page=edit-customer&id=<?= $id ?>"
             >
+
+            <?= csrfField() ?>
 
             <div class="mb-5">
 

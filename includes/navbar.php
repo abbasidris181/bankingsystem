@@ -12,6 +12,27 @@
 
         </div>
 
+
+            <div>
+
+                <p class="font-medium text-slate-700">
+
+                    <?= htmlspecialchars(
+                        $_SESSION["user"]["name"]
+                    ) ?>
+
+                </p>
+
+                <p class="text-xs text-slate-500 capitalize">
+
+                    <?= htmlspecialchars(
+                        $_SESSION["user"]["role"]
+                    ) ?>
+
+                </p>
+
+            </div>
+
         <div class="flex items-center gap-4">
 
             <button class="text-slate-600">

@@ -7,6 +7,9 @@ require_once __DIR__ . "/../app/Repositories/CustomerRepository.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+
+    verifyCsrf();
+
     $fullName = trim($_POST["full_name"] ?? "");
     $phone = trim($_POST["phone"] ?? "");
     $email = trim($_POST["email"] ?? "");

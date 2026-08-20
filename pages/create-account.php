@@ -166,6 +166,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             action="index.php?page=create-account"
         >
 
+        <?= csrfField() ?>
+
 
             <div class="mb-5">
 

@@ -38,6 +38,9 @@ $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+
+     verifyCsrf();
+
     $accountId =
         (int) ($_POST["account_id"] ?? 0);
 
@@ -108,6 +111,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             method="POST"
             action="index.php?page=deposit"
         >
+
+
+            <?= csrfField() ?>
+
 
             <div class="mb-5">
 

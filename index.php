@@ -21,6 +21,10 @@
 
         require_once "includes/auth.php";
 
+        require_once "includes/authorization.php";
+        
+        require_once "includes/csrf.php";
+
         require_once "includes/navbar.php";
 
         ?>

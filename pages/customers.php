@@ -143,29 +143,33 @@ $customers = $repository->all();
                                 >
                                     <i class="fa-solid fa-trash"></i>
                                 </button> -->
-                                
-                            <form
-                                method="POST"
-                                action="index.php?page=delete-customer"
-                                class="inline delete-form"
-                            >
+                            <?php if (isAdmin()): ?>
 
-                                <input
-                                    type="hidden"
-                                    name="id"
-                                    value="<?= $customer['id'] ?>"
-                                >
+                                    <form
+                                        method="POST"
+                                        action="index.php?page=delete-customer"
+                                        class="inline delete-form"
+                                    >
 
-                                <button
-                                    type="button"
-                                    class="text-red-600 hover:text-red-800 delete-customer"
-                                    data-name="<?= htmlspecialchars($customer['full_name']) ?>"
-                                >
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
+                                    <?= csrfField() ?>
 
-                                </form>
+                                        <input
+                                            type="hidden"
+                                            name="id"
+                                            value="<?= $customer['id'] ?>"
+                                        >
 
+                                        <button
+                                            type="button"
+                                            class="text-red-600 hover:text-red-800 delete-customer"
+                                            data-name="<?= htmlspecialchars($customer['full_name']) ?>"
+                                        >
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                    </form>
+
+                                <?php endif; ?>
                             </td>
 
                         </tr>
