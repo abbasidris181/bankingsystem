@@ -31,6 +31,22 @@
                     Admin
                 </span>
 
+                <span class="font-medium text-slate-700">
+
+                    <?= htmlspecialchars(
+                        $_SESSION["user"]["name"]
+                    ) ?>
+                
+                </span>
+
+                <a
+                    href="/BankingSystem/auth/logout.php"
+                    class="text-red-600 hover:text-red-700"
+                    title="Logout"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+
             </div>
 
         </div>
