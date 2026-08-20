@@ -1,111 +1,105 @@
 <?php
 
-        ob_start();
-        session_start();
+ob_start();
 
-        $page =
-            $_GET["page"] ?? "dashboard";
+session_start();
 
+require_once "app/Helpers/helpers.php";
 
-        require_once "includes/header.php";
+$page =
+    $_GET["page"] ?? "dashboard";
 
-
-        if ($page === "login") {
-
-            require_once "pages/login.php";
-
-            require_once "includes/footer.php";
-
-            exit;
-        }
+require_once "includes/header.php";
 
 
-        require_once "includes/auth.php";
+if ($page === "login") {
 
-        require_once "includes/authorization.php";
-        
-        require_once "includes/csrf.php";
+    require_once "pages/login.php";
 
-        require_once "includes/navbar.php";
+    require_once "includes/footer.php";
 
-        ?>
+    ob_end_flush();
 
-        <div class="flex">
-
-            <?php require_once "includes/sidebar.php"; ?>
+    exit;
+}
 
 
-            <?php
-
-            if ($page === "dashboard") {
-
-                require_once "pages/dashboard.php";
-
-            } elseif ($page === "customers") {
-
-                require_once "pages/customers.php";
-
-            } elseif ($page === "create-customer") {
-
-                require_once "pages/create-customer.php";
-
-            } elseif ($page === "customer-details") {
-
-                require_once "pages/customer-details.php";
-
-            } elseif ($page === "edit-customer") {
-
-                require_once "pages/edit-customer.php";
-
-            } elseif ($page === "delete-customer") {
-
-                require_once "pages/delete-customer.php";
-
-            } elseif ($page === "accounts") {
-
-                require_once "pages/accounts.php";
-
-            } elseif ($page === "create-account") {
-
-                require_once "pages/create-account.php";
-
-            } elseif ($page === "deposit") {
-
-                require_once "pages/deposit.php";
-
-            } elseif ($page === "withdraw") {
-
-                require_once "pages/withdraw.php";
-
-            } elseif ($page === "transactions") {
-
-                require_once "pages/transactions.php";
+require_once "includes/auth.php";
+require_once "includes/authorization.php";
+require_once "includes/csrf.php";
+require_once "includes/navbar.php";
 
 
-            }elseif ($page === "account-details") {
+$routes = [
 
-                require_once "pages/account-details.php";
+    "dashboard" =>
+        "pages/dashboard.php",
 
-            } elseif ($page === "transfer") {
+    "customers" =>
+        "pages/customers.php",
 
-                require_once "pages/transfer.php";
+    "create-customer" =>
+        "pages/create-customer.php",
 
-            }
-            
-            
-            else {
+    "customer-details" =>
+        "pages/customer-details.php",
 
-                require_once "pages/dashboard.php";
+    "edit-customer" =>
+        "pages/edit-customer.php",
 
-            }
+    "delete-customer" =>
+        "pages/delete-customer.php",
+
+    "accounts" =>
+        "pages/accounts.php",
+
+    "create-account" =>
+        "pages/create-account.php",
+
+    "account-details" =>
+        "pages/account-details.php",
+
+    "deposit" =>
+        "pages/deposit.php",
+
+    "withdraw" =>
+        "pages/withdraw.php",
+
+    "transfer" =>
+        "pages/transfer.php",
+
+    "transactions" =>
+        "pages/transactions.php"
+
+];
+
+?>
+
+<div class="flex">
+
+    <?php require_once "includes/sidebar.php"; ?>
 
 
-            ob_end_flush();
+    <?php
 
-            ?>
+    if (isset($routes[$page])) {
 
-        </div>
+        require_once $routes[$page];
 
-        <?php
+    } else {
 
-        require_once "includes/footer.php";
+        http_response_code(404);
+
+        require_once "pages/404.php";
+
+    }
+
+    ?>
+
+</div>
+
+<?php
+
+require_once "includes/footer.php";
+
+ob_end_flush();
